@@ -54,3 +54,41 @@ export const singleTodo = async (req: any, res: any) => {
     });
   }
 };
+
+//edit
+// export const editTodo = async (req: any, res: any) => {
+//   try {
+//     const editTodo = await Todo.findByIdAndUpdate(req.params.id, req.body); 
+
+//     res.status(200).json({
+//       status: "success",
+//       data: {
+//         todo: deleteTodo,
+//       },
+//     });
+//   } catch (err) {
+//     res.status(400).json({
+//       status: "fail",
+//       message: err,
+//     });
+//   }
+// };
+
+//delete
+export const deleteTodo = async (req: any, res: any) => {
+  try {
+    const deleteTodo = await Todo.deleteOne(req.params.id); 
+
+    res.status(204).json({
+      status: "success",
+      data: {
+        todo: deleteTodo,
+      },
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: "fail",
+      message: err,
+    });
+  }
+};
