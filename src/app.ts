@@ -9,7 +9,7 @@ app.use(express.json({ limit: "10kb" }));
 
 //CORS
 app.use(cors({
-    origin: "https://codewithjessicateastore.netlify.app/"
+    origin: ["https://codewithjessicateastore.netlify.app", "http://localhost:5173"]
 }));
 
 // ROUTES (endpoint)
@@ -17,6 +17,6 @@ app.use(cors({
 app.use("/todos", todoRouter);
 
 // localhost:8000/users
-app.use("/users", userRouter);
+// app.use("/users", userRouter);
 
 export default app;
