@@ -1,8 +1,8 @@
-import Todo from "../models/todoMondel";
+import Product from "../models/productModel";
 
-export const getAllTodos = async (req: any, res: any) => {
+export const getAllProducts = async (req: any, res: any) => {
   try {
-    const data = await Todo.find();
+    const data = await Product.find();
 
     res.status(200).json({
       status: "success",
@@ -17,14 +17,14 @@ export const getAllTodos = async (req: any, res: any) => {
   }
 };
 
-export const addTodo = async (req: any, res: any) => {
+export const addProduct = async (req: any, res: any) => {
   try {
-    const newTodo = await Todo.create(req.body);
+    const newProduct = await Product.create(req.body);
 
     res.status(201).json({
       status: "success",
       data: {
-        todo: newTodo,
+        todo: newProduct,
       },
     });
   } catch (err) {
@@ -37,14 +37,14 @@ export const addTodo = async (req: any, res: any) => {
 
 // Fetch a single product using a similar approach to above
 // const singleTodo = await Todo.findById(req.params.id); 
-export const singleTodo = async (req: any, res: any) => {
+export const singleProduct = async (req: any, res: any) => {
   try {
-    const singleTodo = await Todo.findById(req.params.id); 
+    const singleProduct = await Product.findById(req.params.id); 
 
     res.status(200).json({
       status: "success",
       data: {
-        todo: singleTodo,
+        todo: singleProduct,
       },
     });
   } catch (err) {
@@ -55,15 +55,15 @@ export const singleTodo = async (req: any, res: any) => {
   }
 };
 
-//edit
-// export const editTodo = async (req: any, res: any) => {
+// edit
+// export const editProduct = async (req: any, res: any) => {
 //   try {
-//     const editTodo = await Todo.findByIdAndUpdate(req.params.id, req.body); 
+//     const editProduct = await Product.findByIdAndUpdate(req.params.id, req.body); 
 
 //     res.status(200).json({
 //       status: "success",
 //       data: {
-//         todo: deleteTodo,
+//         product: editProduct,
 //       },
 //     });
 //   } catch (err) {
@@ -75,14 +75,14 @@ export const singleTodo = async (req: any, res: any) => {
 // };
 
 //delete
-export const deleteTodo = async (req: any, res: any) => {
+export const deleteProduct = async (req: any, res: any) => {
   try {
-    const deleteTodo = await Todo.deleteOne(req.params.id); 
+    const deleteProduct = await Product.deleteOne(req.params.id); 
 
     res.status(204).json({
       status: "success",
       data: {
-        todo: deleteTodo,
+        product: deleteProduct,
       },
     });
   } catch (err) {

@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 
 //Schema for the datanbase
-const todoSchema = new Schema({
+const productsSchema = new Schema({
   name: {
     type: String,
     required: [true, "Product name required!"],
@@ -25,4 +25,4 @@ const todoSchema = new Schema({
   },
 });
 
-export default model("Todo", todoSchema);
+export default model("Product", productsSchema);

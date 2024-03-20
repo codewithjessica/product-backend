@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
-import todoRouter from "./routes/todoRoutes";
-import userRouter from "./routes/userRoutes";
+import productRouter from "./routes/productRoutes";
 const app = express();
 
 // MIDDLEWARE
@@ -14,9 +13,6 @@ app.use(cors({
 
 // ROUTES (endpoint)
 // localhost:8000/todos
-app.use("/todos", todoRouter);
-
-// localhost:8000/users
-// app.use("/users", userRouter);
+app.use("/products", productRouter);
 
 export default app;
