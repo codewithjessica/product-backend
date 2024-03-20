@@ -1,5 +1,5 @@
 import express from "express";
-
+import cors from "cors";
 import todoRouter from "./routes/todoRoutes";
 import userRouter from "./routes/userRoutes";
 const app = express();
@@ -8,9 +8,9 @@ const app = express();
 app.use(express.json({ limit: "10kb" }));
 
 //CORS
-// app.use(cors({
-//     origin: "teastore website"
-// }));
+app.use(cors({
+    origin: "https://codewithjessicateastore.netlify.app/"
+}));
 
 // ROUTES (endpoint)
 // localhost:8000/todos
