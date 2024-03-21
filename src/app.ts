@@ -12,7 +12,7 @@ app.use(cors({
 }));
 
 // ROUTES (endpoint)
-// localhost:8000/todos
+// localhost:8000/products
 app.use("/products", productRouter);
 
 export default app;

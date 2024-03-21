@@ -6,11 +6,11 @@ const productsSchema = new Schema({
     type: String,
     required: [true, "Product name required!"],
   },
-  descriptoin: {
+  description: {
     type: String,
     required: [true, "Product description required!"],
     minlength: 5,
-    maxlength: 100,
+    maxlength: 500,
   },
   price: {
     type: Number,
